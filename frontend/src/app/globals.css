@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #0ea5e9;
+  --primary-foreground: #ffffff;
+  --secondary: #ec4899;
+  --secondary-foreground: #ffffff;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #0ea5e9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+    --border: #334155;
+    --input: #1e293b;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* React Flow styles */
+.react-flow__node {
+  font-family: var(--font-sans);
+}
+
+.react-flow__edge {
+  stroke: var(--primary);
+}
+
+/* Gradient backgrounds */
+.gradient-joy {
+  background: linear-gradient(135deg, #0ea5e9 0%, #ec4899 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
